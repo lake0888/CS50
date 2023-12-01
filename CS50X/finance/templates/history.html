@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th><p align="left">Symbol</p></th>
+                <th><p align="left">Name</p></th>
+                <th><p>Shares</p></th>
+                <th><p align="right">Price</p></th>
+                <th><p align="right">Transacted</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for current in list %}
+                <tr>
+                    <td align="left">{{ current["symbol"] }}</td>
+                    <td align="left">{{ current["name"] }}</td>
+                    <td>{{ current["shares"] }}</td>
+                    <td align="right">{{ current["price"] }}</td>
+                    <td align="right">{{ current["date"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </br>
+{% endblock %}
